@@ -8,8 +8,6 @@
 
 \tikzset{background fill/.style={background rectangle/.style={fill=#1},show background rectangle}}
 
-
-
 \begin{document}
 \begin{tikzpicture}[background rectangle/.style={fill=darkgray}, show background rectangle]
 \draw (-1.25,-1.25) rectangle (3.25,3.25) [cyan,thick];
@@ -37,5 +35,4 @@
 \draw[ultra thick,cyan,domain=90:375,rotate=-45] plot ({\b*\a*1.1*cos(\x)/(5)+\a},{\b*\a*1.1*sin(\x)/(5)+\b-\b*\a*1.1/(5)});
 \draw[ultra thick,cyan,domain=-\a-.01:\a,rotate=-45] plot ({\x},{(\b/(\a^2))*(\x)^2});
 \end{tikzpicture}
-
 \end{document}
