@@ -1,2 +1,3 @@
 # and-e
-LaTeX source code for profile image
+LaTeX source code to create the following image:
+![and-e](ande.png)
