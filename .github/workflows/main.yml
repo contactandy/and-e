@@ -1,0 +1,27 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Install latex packages
+        run: sudo apt install texlive-latex-extra poppler-utils
+      - name: pdflatex ande.tex
+        run: pdflatex ande.tex
+      - name: Convert to png
+        run: |
+          pdftoppm ande.pdf ande -png -r 300
+          mv ande-1.png ande.png
+      - name: Upload png
+        uses: actions/upload-artifact@v3
+        with:
+          name: PNG
+          path: ande.png
+          
+          
+      
