@@ -10,7 +10,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Install latex packages
-        run: sudo apt install texlive-latex-extra pdftoppm
+        run: sudo apt install texlive-latex-extra poppler-utils
       - name: pdflatex ande.tex
         run: pdflatex ande.tex
       - name: Convert to png
