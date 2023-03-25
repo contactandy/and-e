@@ -1,3 +1,7 @@
+\newif\ifcircle
+% let flags file set condition of \ifcircle - default is \iffalse
+\input{flags}
+
 \documentclass[crop,border=5pt,convert]{standalone}
 
 \usepackage{tikz,comment}
@@ -10,7 +14,13 @@
 
 \begin{document}
 \begin{tikzpicture}[background rectangle/.style={fill=darkgray}, show background rectangle]
-\draw (-1.25,-1.25) rectangle (3.25,3.25) [cyan,thick];
+% draw outer rectangle - square by default, unless \circletrue sets \ifcircle
+% to \iftrue
+\ifcircle
+    \input{outside_circle}
+\else
+    \input{outside_square}
+\fi
 % draw axes
 \draw[<->,thick,gray,rotate=-45] (-1.75,.5) -- (1.75,.5) node[right]{$x$};
 \draw[<->,thick,gray,rotate=-45] (0,-1) -- (0,3.75) node[above]{$y$};
