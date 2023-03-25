@@ -16,4 +16,9 @@ square:
 	pdflatex ande.tex
 
 clean:
-	rm -f flags.tex ande.aux ande.dvi ande.log ande.pdf ande.png
+	rm -f flags.tex ande.aux ande.dvi ande.log ande.pdf ande.png x.log
+
+commit: 
+	make circle ande.png
+	mv ande.png ande_circle.png
+	make square ande.png
